@@ -26,7 +26,19 @@ local Chroma database, and answers questions using a chat model.
 ## Usage
 
 1. Place your documentation in a file named `documentacao.txt` in the project
-   root. The file will be loaded by `main.py` to generate embeddings.
+   root. The file should contain plain text. A small sample is provided in this
+   repository to demonstrate how the RAG pipeline works:
+
+   ```
+   Como cadastrar um cliente na plataforma:
+   1. Acesse o menu "Clientes".
+   2. Clique em "Novo Cliente".
+   3. Preencha os dados solicitados.
+   4. Salve para concluir o cadastro.
+   ```
+
+   Replace the example text with your own documentation if desired. The sample
+   is intentionally brief so it can be indexed quickly during testing.
 2. Run the script:
 
    ```bash
