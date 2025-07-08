@@ -84,3 +84,14 @@ python server.py
 The server will start on [http://localhost:8000](http://localhost:8000). Open
 this URL in a browser and submit questions using the page. Answers returned by
 the retrieval chain will be displayed below the form.
+
+## Testing
+
+Pytest is used for automated tests. After installing the requirements, run:
+
+```bash
+pytest
+```
+
+The tests use small sample data and mocked components, so Ollama does not need
+to be running.

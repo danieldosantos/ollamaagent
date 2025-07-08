@@ -6,3 +6,4 @@ chromadb
 tqdm
 pdfminer.six
 Flask
+pytest
