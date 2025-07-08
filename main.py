@@ -1,12 +1,21 @@
 from pathlib import Path
 import argparse
 
-from langchain_community.document_loaders import TextLoader
+from langchain_community.document_loaders import TextLoader, PyPDFLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.chat_models import ChatOllama
 from langchain.chains import RetrievalQA
+
+
+def load_document(path: Path):
+    """Load a document from a text or PDF file."""
+    if path.suffix.lower() == ".pdf":
+        loader = PyPDFLoader(str(path))
+    else:
+        loader = TextLoader(str(path), encoding="utf-8")
+    return loader.load()
 
 
 def main() -> None:
@@ -32,9 +41,8 @@ def main() -> None:
             f"Arquivo '{doc_path}' n\u00e3o encontrado. Certifique-se de que o arquivo est\u00e1 no caminho especificado."
         )
 
-    # 1. Carregar documentos (pode ser .txt, .md, etc.)
-    loader = TextLoader(str(doc_path), encoding="utf-8")
-    docs = loader.load()
+    # 1. Carregar documentos de texto ou PDF
+    docs = load_document(doc_path)
 
     # 2. Dividir em pedaços pequenos
     splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=50)

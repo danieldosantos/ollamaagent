@@ -27,8 +27,9 @@ embedding generation and chat use the `deepseek-r1:8b` model served by Ollama.
 ## Usage
 
 1. Place your documentation in a file named `documentacao.txt` in the project
-   root. The file should contain plain text. A small sample is provided in this
-   repository to demonstrate how the RAG pipeline works:
+   root (or point the script at another file with `--document`). The file can be
+   plain text or a PDF. A small sample is provided in this repository to
+   demonstrate how the RAG pipeline works:
 
    ```
    Como cadastrar um cliente na plataforma:
@@ -62,6 +63,6 @@ pip install -r requirements.txt
 echo "Meu texto" > documentacao.txt
 python main.py
 
-# custom document and question
-python main.py --document docs.txt --question "Qual \u00e9 o hor\u00e1rio de suporte?"
+# custom document and question (PDF or text)
+python main.py --document docs.pdf --question "Qual \u00e9 o hor\u00e1rio de suporte?"
 ```
