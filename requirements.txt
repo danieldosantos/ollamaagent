@@ -5,3 +5,4 @@ langchain-ollama
 chromadb
 tqdm
 pdfminer.six
+Flask
