@@ -1,0 +1,16 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+
+# Ignore virtual environments
+venv/
+.env/
+.env.bak/
+.venv/
+
+# Ignore local database
+chroma_db/
+
+# Ignore OS files
+.DS_Store
+
