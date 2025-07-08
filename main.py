@@ -6,6 +6,13 @@ from langchain.embeddings import OllamaEmbeddings
 from langchain.chat_models import ChatOllama
 from langchain.chains import RetrievalQA
 
+DOCUMENT_PATH = "documentacao.txt"
+
+if not os.path.exists(DOCUMENT_PATH):
+    raise FileNotFoundError(
+        f"Arquivo '{DOCUMENT_PATH}' n\u00e3o encontrado. Certifique-se de que o arquivo est\u00e1 na raiz do projeto."
+    )
+
 # 1. Carregar documentos (pode ser .txt, .md, etc.)
 loader = TextLoader("documentacao.txt", encoding='utf-8')
 docs = loader.load()
