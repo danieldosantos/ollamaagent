@@ -4,6 +4,9 @@ import argparse
 from langchain_community.document_loaders import TextLoader, PyPDFLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
+from chromadb.config import Settings
+
+CHROMA_SETTINGS = Settings(anonymized_telemetry=False)
 from langchain_ollama.embeddings import OllamaEmbeddings
 from langchain_ollama.chat_models import ChatOllama
 from langchain.chains import RetrievalQA
@@ -54,7 +57,12 @@ def main() -> None:
     )
 
     # 4. Indexar os documentos em Chroma
-    db = Chroma.from_documents(chunks, embeddings, persist_directory="./chroma_db")
+    db = Chroma.from_documents(
+        chunks,
+        embeddings,
+        persist_directory="./chroma_db",
+        client_settings=CHROMA_SETTINGS,
+    )
 
     # 5. Configurar o modelo via Ollama
     llm = ChatOllama(model="deepseek-r1:8b", base_url="http://localhost:11434")
