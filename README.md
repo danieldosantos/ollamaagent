@@ -71,3 +71,16 @@ python main.py
 # custom document and question (PDF or text)
 python main.py --document docs.pdf --question "Qual \u00e9 o hor\u00e1rio de suporte?"
 ```
+
+## Web Server
+
+A small Flask application is included to query the RAG pipeline through a web
+interface. After installing the requirements and starting Ollama, run:
+
+```bash
+python server.py
+```
+
+The server will start on [http://localhost:8000](http://localhost:8000). Open
+this URL in a browser and submit questions using the page. Answers returned by
+the retrieval chain will be displayed below the form.
