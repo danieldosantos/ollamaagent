@@ -10,17 +10,27 @@ embedding generation and chat use the `deepseek-r1:8b` model served by Ollama.
 Ollama-specific integrations are provided by the `langchain-ollama` package.
 The retrieval chain in `main.py` is queried using the `invoke()` method.
 
+This project has been tested with **Python&nbsp;3.11**. Earlier versions may work
+but are not guaranteed. Using a virtual environment is highly recommended.
+
 ## Installation
 
 1. Clone this repository and change into the project directory.
-2. Start the Ollama Docker container so the API is available at
+2. Create and activate a Python&nbsp;3.11 virtual environment:
+
+   ```bash
+   python3.11 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+3. Start the Ollama Docker container so the API is available at
    `http://localhost:11434`:
 
    ```bash
    docker run -d -p 11434:11434 ollama/ollama
    ```
 
-3. Install the required Python packages (preferably in a virtual environment):
+4. Install the required Python packages:
 
    ```bash
    pip install -r requirements.txt
