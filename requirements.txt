@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 langchain-community==0.0.36
+=======
+langchain>=0.1.7
+langchain-community>=0.0.24
+ollama==0.1.7
+>>>>>>> b1f4e1cf3ca8711e8bc381e2a2d0af997737fde7
 langchain-ollama==0.3.3
 ollama==0.4.9
 chromadb==0.4.24
