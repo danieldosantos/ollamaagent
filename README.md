@@ -39,14 +39,14 @@ local Chroma database, and answers questions using a chat model.
 
    Replace the example text with your own documentation if desired. The sample
    is intentionally brief so it can be indexed quickly during testing.
-2. Run the script:
+2. Run the script. You can optionally pass the path to the documentation file
+   and the question to ask:
 
    ```bash
-   python main.py
+   python main.py --document documentacao.txt --question "Como cadastrar um cliente na plataforma?"
    ```
 
-   The example question in the script is `"Como cadastrar um cliente na plataforma?"`.
-   You can modify the question or extend the logic as needed.
+   If omitted, both arguments default to the above values.
 
 ## Example Commands
 
@@ -57,7 +57,10 @@ docker run -d -p 11434:11434 ollama/ollama
 # install dependencies
 pip install -r requirements.txt
 
-# supply your document and run
+# supply your document and run with defaults
 echo "Meu texto" > documentacao.txt
 python main.py
+
+# custom document and question
+python main.py --document docs.txt --question "Qual \u00e9 o hor\u00e1rio de suporte?"
 ```
