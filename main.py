@@ -4,8 +4,8 @@ import argparse
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
-from langchain.embeddings import OllamaEmbeddings
-from langchain.chat_models import ChatOllama
+from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.chat_models import ChatOllama
 from langchain.chains import RetrievalQA
 
 
@@ -41,7 +41,9 @@ def main() -> None:
     chunks = splitter.split_documents(docs)
 
     # 3. Gerar embeddings com Ollama
-    embeddings = OllamaEmbeddings()
+    embeddings = OllamaEmbeddings(
+        model="deepseek-r1:8b", base_url="http://localhost:11434"
+    )
 
     # 4. Indexar os documentos em Chroma
     db = Chroma.from_documents(chunks, embeddings, persist_directory="./chroma_db")

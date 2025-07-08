@@ -5,7 +5,8 @@
 This repository demonstrates a minimal retrieval-augmented generation (RAG) workflow
 using [Ollama](https://github.com/ollama/ollama) with LangChain. The `main.py`
 script loads text documents, creates embeddings with Ollama, indexes them in a
-local Chroma database, and answers questions using a chat model.
+local Chroma database, and answers questions using a chat model. Both the
+embedding generation and chat use the `deepseek-r1:8b` model served by Ollama.
 
 ## Installation
 
