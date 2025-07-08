@@ -36,6 +36,10 @@ but are not guaranteed. Using a virtual environment is highly recommended.
    pip install -r requirements.txt
    ```
 
+   The dependencies are pinned to versions known to work together.
+   In particular, `numpy` is restricted to versions below 2.0 because
+   `chromadb` does not yet support the breaking changes in NumPy 2.
+
    The requirements include `langchain-ollama` which provides the
    `OllamaEmbeddings` and `ChatOllama` classes used in `main.py`.
 
