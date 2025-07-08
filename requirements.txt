@@ -1,5 +1,5 @@
-langchain==0.1.7
-langchain-community==0.0.24
+langchain>=0.1.7
+langchain-community>=0.0.24
 ollama==0.1.7
 langchain-ollama==0.3.3
 chromadb==0.4.24
