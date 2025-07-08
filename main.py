@@ -55,7 +55,6 @@ def main() -> None:
 
     # 4. Indexar os documentos em Chroma
     db = Chroma.from_documents(chunks, embeddings, persist_directory="./chroma_db")
-    db.persist()  # salva localmente
 
     # 5. Configurar o modelo via Ollama
     llm = ChatOllama(model="deepseek-r1:8b", base_url="http://localhost:11434")

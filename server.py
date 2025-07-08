@@ -26,7 +26,6 @@ def build_chain(doc_path: Path) -> RetrievalQA:
         model="deepseek-r1:8b", base_url="http://localhost:11434"
     )
     db = Chroma.from_documents(chunks, embeddings, persist_directory="./chroma_db")
-    db.persist()
     llm = ChatOllama(model="deepseek-r1:8b", base_url="http://localhost:11434")
     return RetrievalQA.from_chain_type(llm=llm, retriever=db.as_retriever())
 
