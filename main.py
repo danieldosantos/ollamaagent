@@ -1,4 +1,5 @@
-import os
+from pathlib import Path
+
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
@@ -8,7 +9,7 @@ from langchain.chains import RetrievalQA
 
 DOCUMENT_PATH = "documentacao.txt"
 
-if not os.path.exists(DOCUMENT_PATH):
+if not Path(DOCUMENT_PATH).exists():
     raise FileNotFoundError(
         f"Arquivo '{DOCUMENT_PATH}' n\u00e3o encontrado. Certifique-se de que o arquivo est\u00e1 na raiz do projeto."
     )
