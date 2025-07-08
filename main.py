@@ -4,8 +4,8 @@ import argparse
 from langchain_community.document_loaders import TextLoader, PyPDFLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import OllamaEmbeddings
-from langchain_community.chat_models import ChatOllama
+from langchain_ollama.embeddings import OllamaEmbeddings
+from langchain_ollama.chat_models import ChatOllama
 from langchain.chains import RetrievalQA
 
 
@@ -65,7 +65,7 @@ def main() -> None:
 
     # 7. Teste prático
     pergunta = args.question
-    resposta = qa_chain.run(pergunta)
+    resposta = qa_chain.invoke({"query": pergunta})["result"]
 
     print("\n🧠 Pergunta:", pergunta)
     print("💬 Resposta do modelo:")

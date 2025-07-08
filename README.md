@@ -7,6 +7,8 @@ using [Ollama](https://github.com/ollama/ollama) with LangChain. The `main.py`
 script loads text documents, creates embeddings with Ollama, indexes them in a
 local Chroma database, and answers questions using a chat model. Both the
 embedding generation and chat use the `deepseek-r1:8b` model served by Ollama.
+Ollama-specific integrations are provided by the `langchain-ollama` package.
+The retrieval chain in `main.py` is queried using the `invoke()` method.
 
 ## Installation
 
@@ -23,6 +25,9 @@ embedding generation and chat use the `deepseek-r1:8b` model served by Ollama.
    ```bash
    pip install -r requirements.txt
    ```
+
+   The requirements include `langchain-ollama` which provides the
+   `OllamaEmbeddings` and `ChatOllama` classes used in `main.py`.
 
 ## Usage
 
