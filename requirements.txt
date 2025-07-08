@@ -1,7 +1,6 @@
-langchain==0.1.7
-langchain-community==0.0.24
-ollama==0.1.7
+langchain-community==0.0.36
 langchain-ollama==0.3.3
+ollama==0.4.9
 chromadb==0.4.24
 tqdm==4.66.1
 pdfminer.six==20221105
