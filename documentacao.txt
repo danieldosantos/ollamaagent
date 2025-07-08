@@ -1,0 +1,5 @@
+Como cadastrar um cliente na plataforma:
+1. Acesse o menu "Clientes".
+2. Clique em "Novo Cliente".
+3. Preencha os dados solicitados.
+4. Salve para concluir o cadastro.
