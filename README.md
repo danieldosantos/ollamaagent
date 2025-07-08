@@ -105,3 +105,7 @@ pytest
 
 The tests use small sample data and mocked components, so Ollama does not need
 to be running.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
