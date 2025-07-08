@@ -1,6 +1,7 @@
 langchain
 langchain-community
 ollama
+langchain-ollama
 chromadb
 tqdm
 pdfminer.six
